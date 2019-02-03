@@ -1,0 +1,9 @@
+{% extends "master" %}
+{% block content %}
+{{ body }}
+{% for article in article_list %}
+<p class="post-updated">{{ article.updated | date:"dd MMM yyyy" }}</p>
+<h1><a href="{{ article.relative_url }}">{{ article.title }}</a></h1>
+<p>{{ article.abstract }}</p>
+{% endfor %}
+{% endblock %}

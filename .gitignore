@@ -1,0 +1,4 @@
+node_modules/
+config.cfg
+config.cfg.*
+!config.cfg.example

@@ -1,0 +1,32 @@
+{
+    "name": "markb.uk",
+    "version": "1.0.0",
+    "private": true,
+    "description": "Front end code for markb.uk.",
+    "main": "main.js",
+    "scripts": {},
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/markashleybell/markb.uk.git"
+    },
+    "author": "Mark Ashley Bell",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/markashleybell/markb.uk/issues"
+    },
+    "homepage": "https://github.com/markashleybell/markb.uk#readme",
+    "devDependencies": {
+        "gulp": "4.0.0",
+        "gulp-sass": "4.0.2",
+        "node-sass": "4.11.0",
+        "gulp-clean-css": "4.0.0",
+        "gulp-uglify": "3.0.2",
+        "gulp-concat": "2.6.1",
+        "gulp-rename": "1.4.0",
+        "typescript": "3.3.3333",
+        "gulp-typescript": "5.0.0",
+        "gulp-sourcemaps": "2.6.5",
+        "gulp-filter": "5.1.0",
+        "tslint": "5.13.1"
+    }
+}

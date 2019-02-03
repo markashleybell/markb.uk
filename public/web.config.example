@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <system.webServer>
+        <rewrite>
+            <rules>
+                <rule name="Canonical Host Name" stopProcessing="true">
+                    <match url="(.*)" />
+                    <conditions>
+                        <add input="{HTTP_HOST}" pattern="^markb\.uk$" negate="true" />
+                        <add input="{HTTP_HOST}" pattern="^cdn\d\.markb\.uk$" negate="true" />
+                    </conditions>
+                    <action type="Redirect" url="https://markb.uk/{R:1}" />
+                </rule>
+                <rule name="HTTP to HTTPS redirect" stopProcessing="true">
+                    <match url="(.*)" />
+                    <conditions>
+                        <add input="{HTTPS}" pattern="off" />
+                    </conditions>
+                    <action type="Redirect" url="https://{HTTP_HOST}/{R:1}" redirectType="Permanent" />
+                </rule>
+                <rule name="Old Article Redirects" stopProcessing="true">
+                    <match url="articles/([^/]+)/?$" />
+                    <action type="Redirect" url="{R:1}.html" />
+                </rule>
+                <rule name="Article Index" stopProcessing="true">
+                    <match url="articles/?$" />
+                    <action type="Redirect" url="articles.html" />
+                </rule>
+                <rule name="Redirect Pages From CDN" stopProcessing="true">
+                    <match url="(.*\.html)$" />
+                    <action type="Redirect" url="https://markb.uk/{R:1}" />
+                    <conditions>
+                        <add input="{HTTP_HOST}" pattern="cdn\d\.markb\.uk" />
+                    </conditions>
+                </rule>
+            </rules>
+            <outboundRules>
+                <rule name="HTTPS Strict-Transport-Security" enabled="true">
+                    <match serverVariable="RESPONSE_Strict_Transport_Security" pattern=".*" />
+                    <conditions>
+                        <add input="{HTTPS}" pattern="on" ignoreCase="true" />
+                    </conditions>
+                    <action type="Rewrite" value="max-age=10886400" />
+                </rule>
+                <rule name="X-Content-Type-Options for CSS/JS" enabled="true">
+                    <match serverVariable="RESPONSE_X-Content-Type-Options" pattern=".*" />
+                    <conditions>
+                            <add input="{URL}" pattern="\.(js|css)$" />
+                    </conditions>
+                    <action type="Rewrite" value="nosniff" />
+                </rule>
+            </outboundRules>
+        </rewrite>
+        <httpErrors>
+            <remove statusCode="404" subStatusCode="-1" />
+            <error statusCode="404" prefixLanguageFilePath="" path="FIX_THIS_PATH\public\404.html" responseMode="File" />
+        </httpErrors>
+        <staticContent>
+            <remove fileExtension=".css" />
+            <remove fileExtension=".js" />
+            <remove fileExtension=".html" />
+            <mimeMap fileExtension=".html" mimeType="text/html;charset=utf-8" />
+            <mimeMap fileExtension=".js" mimeType="text/javascript;charset=utf-8" />
+            <mimeMap fileExtension=".css" mimeType="text/css;charset=utf-8" />
+            <clientCache cacheControlMode="UseMaxAge" cacheControlMaxAge="7.00:00:00" />
+        </staticContent>
+    </system.webServer>
+</configuration>

@@ -1,0 +1,15 @@
+{
+    "files": [
+        "js/*.ts"
+    ],
+    "compilerOptions": {
+        "target": "es5",
+        "noImplicitAny": true,
+        "noEmitOnError": true,
+        "lib": [
+            "dom",
+            "es5",
+            "es2015.iterable"
+        ]
+    }
+}

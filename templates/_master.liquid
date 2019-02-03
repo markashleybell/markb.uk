@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="{{ document_class }}">
+    <head>
+        <meta charset="utf-8" />
+        <title>{{ meta_title }}</title>
+        <!-- BEGIN META DATA -->
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <!-- Search Engine -->
+        <meta name="description" content="{{ og_abstract }}">
+        <meta name="image" content="{{ site_url }}/img/post/site.png">
+        <!-- Schema.org -->
+        <meta itemprop="name" content="{{ og_title }}">
+        <meta itemprop="description" content="{{ og_abstract }}">
+        <meta itemprop="image" content="{{ site_url }}/img/post/site.png">
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="{{ og_title }}">
+        <meta name="twitter:description" content="{{ og_abstract }}">
+        <meta name="twitter:site" content="@markashleybell">
+        <meta name="twitter:creator" content="@markashleybell">
+        <meta name="twitter:image:src" content="{{ site_url }}/img/post/{{ og_image }}">
+        <!-- Open Graph: General -->
+        <meta name="og:title" content="{{ og_title }}">
+        <meta name="og:description" content="{{ og_abstract }}">
+        <meta name="og:image" content="{{ site_url }}/img/post/{{ og_image }}">
+        <meta name="og:url" content="{{ site_url }}/{{ og_url }}">
+        <meta name="og:site_name" content="{{ site_name }}">
+        <meta name="og:locale" content="en_GB">
+        {% if template == 'article' %}
+        <meta name="og:type" content="article">
+        <!-- Open Graph: Article -->
+        <meta name="article:section" content="Articles">
+        <meta name="article:published_time" content="{{ published | date:"yyyy-MM-dd HH:mm:ss" }}">
+        <meta name="article:author" content="Mark Ashley Bell">
+        <meta name="article:modified_time" content="{{ updated | date:"yyyy-MM-dd HH:mm:ss" }}">
+        {% else %}
+        <meta name="og:type" content="website">
+        {% endif %}
+        <!-- END META DATA -->
+        <link rel="canonical" href="{{ site_url }}/{{ og_url }}" />
+        <link rel="alternate" type="application/rss+xml" title="{{ rss_description }}" href="/rss.xml" />
+        <link rel="shortcut icon" href="/img/favicon.ico" />
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+        <link href="https://fonts.googleapis.com/css?family=Bitter:700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" media="screen" href="{{ cdn1 }}/css/bundle.css" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id={{ analytics_id }}"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '{{ analytics_id }}');
+        </script>
+    </head>
+    <body>
+        <div class="container" role="main">
+            {% block header %}
+            <a class="header" href="/">Mark Ashley Bell</a>
+            {% endblock %}
+            {% block content %}{% endblock %}
+            {% block recent_articles %}{% endblock %}
+            {% block footer %}
+            <p class="credit">&copy; <a href="https://twitter.com/markashleybell" title="External Link: Twitter Profile">Mark Ashley Bell</a> 2018</p>
+            {% endblock %}
+        </div>
+        <script async src="{{ cdn2 }}/js/bundle.js"></script>
+    </body>
+</html>

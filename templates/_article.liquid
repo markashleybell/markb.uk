@@ -1,0 +1,32 @@
+{% extends "master" %}
+{% block content %}
+<p class="post-updated">{{ updated | date:"dd MMM yyyy" }}</p>
+<h1><a href="{{ relative_url }}">{{ title }}</a></h1>
+{{ body }}
+{% if updated > published %}
+<p class="publish-note">Originally published on {{ published | date:"dd MMM yyyy" }}; updated on {{ updated | date:"dd MMM yyyy" }}</p>
+{% endif %}
+<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+        this.page.url = '{{ site_url }}/{{ relative_url }}';
+        this.page.identifier = '{{ relative_url }}';
+    };
+
+    (function() {
+        var d = document, s = d.createElement('script');
+        s.src = '//{{ disqus_id }}.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+{% endblock %}
+{% block recent_articles %}
+<h2>More articles</h2>
+<ul class="post-list" role="navigation">
+    {% for article in article_list %}
+    <li><a href="{{ article.relative_url }}">{{ article.title }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,149 @@
+$vertical-whitespace: 10px;
+$horizontal-whitespace: 20px;
+
+body { 
+    background-color: #f6f6f6;
+}
+
+h1, h2, h3, h4, .header, .post-updated, .hero p {
+    font-family: 'Bitter', serif;
+}
+
+h1 {
+    font-size: 1.75em;
+}
+
+h2 {
+    font-size: 1.2em;
+}
+
+img {
+    max-width: 100%;
+    display: inline-block;
+    border: solid 1px #e0e0e0;
+    border-radius: 3px;
+}
+
+ul {
+    padding-left: $horizontal-whitespace;
+    padding-top: $vertical-whitespace;
+}
+
+code {
+    background-color: #e0e0e0;
+    border-radius: 3px;
+    padding: 2px 6px;
+    font-size: 0.9em;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 $horizontal-whitespace;
+    max-width: 682px;
+}
+
+.header {
+    display: block;
+    padding: $vertical-whitespace * 2 0;
+}
+
+.post-list {
+    list-style: none;
+    padding-left: 0;
+    li {
+        border-bottom: solid 1px #e0e0e0;
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+    a {
+        display: block;
+        padding: $vertical-whitespace 0;    
+    }
+}
+
+.post-updated {
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.code {
+    background: #272822; 
+    color: #f8f8f2;
+    border-radius: 5px;
+    padding: $vertical-whitespace $horizontal-whitespace;
+    max-width: 1000px;
+    line-height: 1.35;
+}
+
+.code code {
+    background: none;
+    border-radius: 0;
+    padding: 0;     
+}
+
+.k { color: #66d9ef; }
+.c { color: #75715e; }
+.s { color: #e6db74; }
+.n { color: #ae81ff; }
+.o { color: #f92672; }
+.t { color: #f92672; }
+.p { color: #f8f8f2; }
+.a { color: #a6e22e; }
+.f { color: #a6e22e; }
+.t { color: #c7baff; }
+
+.publish-note {
+    font-size: 0.9em;
+    color: #999999;
+}
+
+.credit {
+    padding-top: $vertical-whitespace * 2;
+    margin-bottom: $vertical-whitespace * 4;
+    font-size: 11px;
+}
+
+.html-index {
+    height: 100%;
+    body {
+        height: 100%;
+    }
+    .container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.hero {
+    h1, p {
+        font-size: 1.7em;
+        font-weight: bold;
+        text-align: center;
+        margin: 15px auto;
+    }
+    h1 {
+        margin-top: 0;
+        max-width: 520px;
+    }
+    p {
+        max-width: 620px;
+        &:last-child {
+            max-width: 400px;
+        }
+    }
+}
+
+.html-articles {
+    h1 {
+        font-size: 1.4em;
+        margin-bottom: 0;
+    }
+}
+
+#disqus_thread {
+    padding-top: $vertical-whitespace * 2;
+    margin-bottom: $horizontal-whitespace;
+}
