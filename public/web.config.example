@@ -31,6 +31,7 @@
                     <action type="Redirect" url="https://markb.uk/{R:1}" />
                     <conditions>
                         <add input="{HTTP_HOST}" pattern="cdn\d\.markb\.uk" />
+                        <add input="{HTTP_HOST}" pattern="cdn\d\.markb\.co\.uk" />
                     </conditions>
                 </rule>
             </rules>
