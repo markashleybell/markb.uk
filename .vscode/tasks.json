@@ -3,8 +3,20 @@
     "tasks": [
         {
             "type": "gulp",
-            "task": "compile-js",
+            "task": "watch",
             "problemMatcher": [
+                "$node-sass",
+                "$gulp-tsc",
+                "$tsc",
+                "$tsc-watch"
+            ]
+        },
+        {
+            "type": "gulp",
+            "task": "build",
+            "problemMatcher": [
+                "$node-sass",
+                "$gulp-tsc",
                 "$tsc"
             ]
         },
@@ -17,16 +29,10 @@
         },
         {
             "type": "gulp",
-            "task": "watch-js",
+            "task": "compile-js",
             "problemMatcher": [
+                "$gulp-tsc",
                 "$tsc"
-            ]
-        },
-        {
-            "type": "gulp",
-            "task": "watch-css",
-            "problemMatcher": [
-                "$node-sass"
             ]
         }
     ]
