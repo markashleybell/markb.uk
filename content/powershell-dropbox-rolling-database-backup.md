@@ -19,6 +19,7 @@ Once you've created a new application, look for the OAuth 2 settings and generat
 
 Dropbox provides an HTTP REST API, so we can consume it using the Powershell `Invoke-RestMethod` cmdlet. Here's a Powershell function which will upload a file to Dropbox:
 
+    :::powershell
     function Upload-FileToDropbox { 
         param(
             [Parameter(Mandatory=$true)]
@@ -40,7 +41,7 @@ Dropbox provides an HTTP REST API, so we can consume it using the Powershell `In
         $headers.Add("Content-Type", 'application/octet-stream')
          
         Invoke-RestMethod `
-            -Uri https://content.dropboxapi.com/2/files/upload `
+            -Uri 'https://content.dropboxapi.com/2/files/upload' `
             -Method Post `
             -InFile $SourcePath `
             -Headers $headers
@@ -48,6 +49,7 @@ Dropbox provides an HTTP REST API, so we can consume it using the Powershell `In
 
 Because these databases aren't critical, we only need the last few backups of each. We'll delete any older files, each time the script runs. So we also need a delete function:
 
+    :::powershell
     function Remove-FileFromDropbox { 
         param(
             [Parameter(Mandatory=$true)]
@@ -66,7 +68,7 @@ Because these databases aren't critical, we only need the last few backups of ea
         $headers.Add("Content-Type", 'application/json')
 
         Invoke-RestMethod `
-            -Uri https://api.dropboxapi.com/2/files/delete_v2 `
+            -Uri 'https://api.dropboxapi.com/2/files/delete_v2' `
             -Method Post `
             -Headers $headers `
             -Body $body
@@ -75,6 +77,7 @@ Because these databases aren't critical, we only need the last few backups of ea
 
 Finally, we tie those functions together:
 
+    :::powershell
     $AccessToken = '{YOUR_ACCESS_TOKEN_HERE}'
     $BackupPath 'C:\temp\db-backups'
     $DatabaseNames = 'database1', 'database2'
