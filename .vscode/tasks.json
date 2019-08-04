@@ -19,21 +19,6 @@
                 "$gulp-tsc",
                 "$tsc"
             ]
-        },
-        {
-            "type": "gulp",
-            "task": "compile-css",
-            "problemMatcher": [
-                "$node-sass"
-            ]
-        },
-        {
-            "type": "gulp",
-            "task": "compile-js",
-            "problemMatcher": [
-                "$gulp-tsc",
-                "$tsc"
-            ]
         }
     ]
 }
