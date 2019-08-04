@@ -43,6 +43,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
         <link href="https://fonts.googleapis.com/css?family=Bitter:700" rel="stylesheet">
         <link rel="stylesheet" type="text/css" media="screen" href="{{ cdn1 }}/css/bundle.css" />
+        {% if analytics_id != null and analytics_id != "" %}
         <script async src="https://www.googletagmanager.com/gtag/js?id={{ analytics_id }}"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
@@ -50,6 +51,7 @@
             gtag('js', new Date());
             gtag('config', '{{ analytics_id }}');
         </script>
+        {% endif %}
     </head>
     <body>
         <div class="container" role="main">
