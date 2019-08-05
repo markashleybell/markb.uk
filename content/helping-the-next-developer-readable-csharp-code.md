@@ -97,7 +97,3 @@ Add comments when you want to explain *why* you did something. That way, maintai
 *Don't* just comment out old code and leave it there “just in case”. Having to scan large blocks of commented-out code increases cognitive load for future readers. It also makes searching the code less effective, because searches often return matches which are within commented blocks.
 
 If code is no longer used, *delete it and make a commit explaining why you did so*. If you later discover you need it after all, retrieve it from your version control system—that's what it's for!
-
-## That's it for now
-
-I hope you find some of these tips useful. Comments are welcome, as always.

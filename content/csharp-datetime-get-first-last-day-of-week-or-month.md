@@ -12,8 +12,12 @@ I recently found myself needing to get the date of the first day of a particular
         {
             var culture = System.Threading.Thread.CurrentThread.CurrentCulture;
             var diff = dt.DayOfWeek - culture.DateTimeFormat.FirstDayOfWeek;
-            if(diff < 0)
+            
+            if (diff < 0)
+            {
                 diff += 7;
+            }
+
             return dt.AddDays(-diff).Date;
         }
 

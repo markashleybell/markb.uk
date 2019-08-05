@@ -12,7 +12,7 @@ The first step is to [download the zip file containing Portable Git](http://code
 
 Now open the new Git folder. Inside you'll see a number of folders and files. Run the batch file named `git-bash.bat` and you should see a shell prompt screen. Type the following:
 
-`git --version`
+    git --version
 
 You should see something like this (possibly with a different version number, depending on the version you downloaded):
 
@@ -28,21 +28,21 @@ Create a folder within the Git folder called `home`. I also created a sub folder
 
 Now we need to set the `$HOME` environment variable, which is how Git knows where to look for the current user's home folder. I found the easiest way to do this was to edit `E:\Git\etc\profile` and override the `$HOME` variable on startup. Find these lines:
 
-`# normalize HOME to unix path`
-`HOME="$(cd "$HOME" ; pwd)"`
+    # normalize HOME to unix path
+    HOME="$(cd "$HOME" ; pwd)"
 
 And on the line _before_ them add this:
 
-`HOME="/home/mark"`
+    HOME="/home/mark"
 
 Where the path is the folder you just created, _relative to the folder in which you installed Git_ (thanks to commenter Genesis2001 for the heads-up on this). Note that this is in UNIX format rather than Windows, so `\home\mark` became `/home/mark`. Close any Git shell windows you have open and run `git-bash.bat` again. When the prompt opens, type:
 
-`echo $HOME`
+    echo $HOME
 
 You should see the UNIX path you entered: this means Git is now using your new folder as its home folder. Now we'll set the global name and email address which will be associated with Git commits; in order to use [GitHub](https://github.com/ "External Link: GitHub"), we also need to generate an SSL key pair for authentication. Enter the following two commands at the shell prompt to set the global variables:
 
-`git config --global user.name "Your Name"`
-`git config --global user.email you@yourdomain.com`
+    git config --global user.name "Your Name"
+    git config --global user.email you@yourdomain.com
 
 Now that we have pointed Portable Git to the correct folder, you should be able to follow the excellent [GitHub Help guide to generating an SSL key pair](https://help.github.com/msysgit-key-setup "External Link: SSL Setup Help (GitHub)"). Once you’ve done that, change to the new home folder and create an empty file named `profile` (no extension—the filename would normally be `.profile` under UNIX, but MSYS lets you omit the period to make things easier under Windows).
 

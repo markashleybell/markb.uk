@@ -1,4 +1,4 @@
-Title: Rolling database backups to Dropbox using Powershell
+Title: Rolling database backups to Dropbox with Powershell
 Abstract: Automating SQL Server database backups using Powershell and the Dropbox API.
 Published: 2019-05-06 09:00
 Updated: 2019-05-06 09:00
