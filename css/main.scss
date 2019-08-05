@@ -365,7 +365,7 @@ h4,
 .post-updated,
 .hero p {
     font-style: normal;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 h1 {
@@ -426,10 +426,10 @@ code {
 }
 
 .code {
-    background: #272822;
+    background: #2e3026;
     color: #f8f8f2;
     border-radius: 5px;
-    padding: $vertical-whitespace $horizontal-whitespace;
+    padding: $vertical-whitespace * 2 $horizontal-whitespace * 1.5;
     max-width: 1000px;
     line-height: 1.35;
 }

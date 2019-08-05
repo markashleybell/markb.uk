@@ -1,4 +1,4 @@
-Title: Automatically converting tabs to spaces on file open in Sublime Text
+Title: Automatically converting tabs to spaces in Sublime Text
 Abstract: A Sublime Text plugin to automatically convert tabs to spaces when a file is opened.
 Published: 2013-11-03 08:19
 Updated: 2014-03-12 06:02

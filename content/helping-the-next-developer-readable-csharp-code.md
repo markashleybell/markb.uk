@@ -61,7 +61,9 @@ I'm sure you'll also have seen code like this:
 
 What do all of those parameter values represent?
 
-By using named arguments, we can make things much clearer:
+There is [an argument for not using boolean flags as method parameters at all](https://medium.com/@amlcurran/clean-code-the-curse-of-a-boolean-parameter-c237a830b7a3), but in the real world we're often using APIs we didn't write, or consuming legacy code which can't easily be rewritten.
+
+By using named method arguments, we can make things much clearer:
 
     :::csharp
     var myObject1 = new ComplicatedThing(
@@ -92,7 +94,7 @@ Add comments when you want to explain *why* you did something. That way, maintai
 
 ## Remove old code
 
-*Don't* just comment out old code and leave it there “just in case”. Having to scan large blocks of commented-out code increases cognitive load for future readers.
+*Don't* just comment out old code and leave it there “just in case”. Having to scan large blocks of commented-out code increases cognitive load for future readers. It also makes searching the code less effective, because searches often return matches which are within commented blocks.
 
 If code is no longer used, *delete it and make a commit explaining why you did so*. If you later discover you need it after all, retrieve it from your version control system—that's what it's for!
 
