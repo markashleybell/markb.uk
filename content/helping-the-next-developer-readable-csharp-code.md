@@ -65,7 +65,7 @@ There is [an argument for not using boolean flags as method parameters at all](h
 
 By using named method arguments, we can make things much clearer:
 
-    :::csharp
+    :::csharp{ComplicatedThing|Action}
     var myObject1 = new ComplicatedThing(
         loadChildren: true,
         maxDepth: 3,

@@ -412,6 +412,10 @@ code {
     font-size: 0.9em;
 }
 
+figure {
+    text-align: center;
+}
+
 .container {
     margin: 0 auto;
     padding: 0 $horizontal-whitespace;
@@ -473,9 +477,6 @@ code {
 .o {
     color: #f92672;
 }
-.t {
-    color: #f92672;
-}
 .p {
     color: #f8f8f2;
 }
@@ -486,7 +487,7 @@ code {
     color: #a6e22e;
 }
 .t {
-    color: #c7baff;
+    color: #adafff;
 }
 
 .publish-note {
