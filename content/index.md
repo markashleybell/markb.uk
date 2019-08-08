@@ -10,4 +10,4 @@ DocumentClass: html-index
 I write C#, F#, TypeScript and Python code,
 and occasionally [blog about it](/articles.html). I also maintain some [open source projects](https://github.com/markashleybell "External Link: GitHub Profile").
 
-Get in touch [@markashleybell](https://twitter.com/markashleybell), or email <span class="e">[Turn On Javascript To View Email Address]</span>.
+Get in touch [@markashleybell](https://twitter.com/markashleybell "External Link: Twitter Profile"), or email <span class="e">[Turn On Javascript To View Email Address]</span>.
