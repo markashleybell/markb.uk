@@ -45,7 +45,7 @@ When you can do this, with no loss of clarity:
 
 The exception to this rule is when it isn't clear what the type will be from the assignment:
 
-    :::csharp
+    :::csharp{Animal}
     Animal dog = GetThing(true);
 
 This contrived example contains a deliberately terrible method name, but I'm sure we've all seen similar code in real codebases…
