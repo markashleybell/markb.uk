@@ -173,19 +173,31 @@ figure {
 .hero {
     h1,
     p {
-        font-size: 2.2rem;
+        font-size: 1.4rem;
+        @media (min-width: 740px) {
+            font-size: 2.2rem;
+        }
         text-align: center;
         margin: 15px auto;
         line-height: 1.5;
     }
     h1 {
         margin-top: 0;
-        max-width: 620px;
+        max-width: 320px;
+        @media (min-width: 740px) {
+            max-width: 620px;
+        }
     }
     p {
         max-width: 750px;
         &:last-child {
             max-width: 540px;
+        }
+        @media (min-width: 740px) {
+            max-width: 750px;
+            &:last-child {
+                max-width: 540px;
+            }
         }
     }
 }
