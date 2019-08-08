@@ -12,16 +12,19 @@ namespace markb {
     }
 
     function externalLinkClickHandler(e: Event): void {
-        e.preventDefault();
-        const link: HTMLElement = e.currentTarget as HTMLElement;
-        const href: string = link.getAttribute('href');
-        const title: string = link.getAttribute('title').substring(externalLinkQualifier.length);
-        gtag('event', 'Click', {
-            'event_category': 'External Link',
-            'event_label': title,
-            'transport_type': 'beacon',
-            'event_callback': () => document.location.href = href
-        });
+        if (typeof gtag !== 'undefined') {
+            e.preventDefault();
+            const link: HTMLElement = e.currentTarget as HTMLElement;
+            const href: string = link.getAttribute('href');
+            const title: string = link.getAttribute('title').substring(externalLinkQualifier.length);
+
+            gtag('event', 'Click', {
+                'event_category': 'External Link',
+                'event_label': title,
+                'transport_type': 'beacon',
+                'event_callback': () => document.location.href = href
+            });
+        }
     }
 
     export function init(): void {
