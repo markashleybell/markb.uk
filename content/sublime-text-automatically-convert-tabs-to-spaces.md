@@ -26,6 +26,6 @@ Add a key named `expand_tabs_on_load` with a value of `true` to your global, use
         "expand_tabs_on_load": true
     }
 
-Most of the similar plugins I've tried perform the tab replacement silently, when the file is saved. I prefer to do the replacement on load, because it allows a quick visual check of the file before committing to the changes. If you _do_ want to silently replace tabs on save, [this solution](https://coderwall.com/p/zvyg7a) by Paulo Rodrigues Pinto works nicely.
+Most of the similar plugins I've tried perform the tab replacement silently, when the file is saved. I prefer to do the replacement on load, because it allows a quick visual check of the file before committing to the changes. If you _do_ want to silently replace tabs on save, [this solution](https://coderwall.com/p/zvyg7a "External Link: Convert Tabs to Spaces on file save") by Paulo Rodrigues Pinto works nicely.
 
 [The source code can be found here](https://github.com/markashleybell/ExpandTabsOnLoad "External Link: ExpandTabsOnLoad GitHub Repository"); I welcome any contributions or improvements!

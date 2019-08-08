@@ -9,9 +9,9 @@ I've been writing a lot of Powershell scripts recently, and this looked like ano
 
 ## Create a Dropbox application
 
-The Dropbox API requires [OAuth](https://oauth.net/) authorisation. Our script is going to run unattended, so we'll need an OAuth access token. This will allow us to make API calls without going through the OAuth authorisation flow. 
+The Dropbox API requires [OAuth](https://oauth.net/ "External Link: oauth.net") authorisation. Our script is going to run unattended, so we'll need an OAuth access token. This will allow us to make API calls without going through the OAuth authorisation flow. 
 
-To get an access token for your Dropbox account, create a new application using the [app console](https://www.dropbox.com/developers/apps). Choose the option to restrict access to a specific folder, then name it something recognisable.
+To get an access token for your Dropbox account, create a new application using the [app console](https://www.dropbox.com/developers/apps "External Link: Dropbox Developer App Console"). Choose the option to restrict access to a specific folder, then name it something recognisable.
 
 Once you've created a new application, look for the OAuth 2 settings and generate an access token. Copy/paste the token somewhere safe as soon as it's created; it'll disappear when you leave the page and you'll have to create a new token to see it again.
 
@@ -115,7 +115,7 @@ Finally, we tie those functions together:
 
 This will create time-stamped backup files for the specified databases, upload them, then delete any old backups. I _hope_ this code explains itself, but feel free to ask questions in the comments. 
 
-[The complete script is available here](https://gist.github.com/markashleybell/328fe4c40c279808253a78cef9f6ea62); we can call it like this:
+[The complete script is available here](https://gist.github.com/markashleybell/328fe4c40c279808253a78cef9f6ea62 "External Link: Dropbox Rolling Backup Gist"); we can call it like this:
 
     .\dropbox-db-backup.ps1 `
         -AccessToken {YOUR_ACCESS_TOKEN_HERE} `
@@ -126,7 +126,7 @@ This will create time-stamped backup files for the specified databases, upload t
 
 Now we have the script, we can easily schedule it to run on a regular basis. In my case, I created a basic task in Windows Task Scheduler which runs the script every few hours.
 
-One gotcha here: due to the tricky [quoting rules](https://stackoverflow.com/questions/14989073/parameters-with-double-quotes-are-not-properly-passed-to-scriptblock-by-argument), I found it difficult to pass Powershell parameters from Task Scheduler in the correct format. 
+One gotcha here: due to the tricky [quoting rules](https://stackoverflow.com/questions/14989073/parameters-with-double-quotes-are-not-properly-passed-to-scriptblock-by-argument "External Link: Stack Overflow Powershell Quoting"), I found it difficult to pass Powershell parameters from Task Scheduler in the correct format. 
 
 A simple workaround is to create another `.ps1` file which just contains the hard-coded script call with all parameters (I called mine `dropbox-db-backup-scheduled.ps1`). We can then tell Task Scheduler to run _that_, with no need to specify any parameters.
 

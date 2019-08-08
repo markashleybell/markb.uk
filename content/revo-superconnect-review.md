@@ -42,7 +42,7 @@ After a month of daily use, here's my list of pros and cons:
 
 * There are only three options for display brightness, and even the lowest brightness setting is still fairly bright. This doesn't bother me at all, but if you are sensitive to light in the room while trying to sleep, it might be a problem.
 
-* The companion [internet radio portal website](http://www.wifiradio-frontier.com/) is very outdated and quite clunky to use. You don't *need* to use it, but it's the only way to set up new/favourite stations which are then listed in the radio's menu system. I'm also a little concerned about what happens if that site disappears at some point in the future...
+* The companion [internet radio portal website](http://www.wifiradio-frontier.com/ "External Link: Frontier Radio Portal") is very outdated and quite clunky to use. You don't *need* to use it, but it's the only way to set up new/favourite stations which are then listed in the radio's menu system. I'm also a little concerned about what happens if that site disappears at some point in the future...
 
 * Accessing the sleep function takes several button presses in order to navigate the menu system. This is my biggest issue with the unit: as (I'd imagine) one of the most commonly used functions of a bedside radio, why can't there be a dedicated button for this?
 

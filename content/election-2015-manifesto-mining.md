@@ -14,7 +14,7 @@ After an embarrassingly short period of time, I got bored and decided to make th
 
 Most of you will have seen word clouds before, but in case you're one of those who haven't: the bigger the word, the more times it appears in that manifesto.
 
-As this is a developer blog, I'll mention a few technical bits and pieces: I used [PDFMiner](https://github.com/euske/pdfminer) to extract the raw text from the manifesto PDF files, then knocked together a [Python script](https://github.com/markashleybell/manifesto-miner) and a list of stop words to clean up and process the text data. The word clouds themselves are rendered using Tim Chien's [wordcloud2.js](https://github.com/timdream/wordcloud2.js).
+As this is a developer blog, I'll mention a few technical bits and pieces: I used [PDFMiner](https://github.com/euske/pdfminer "External Link: PDFMiner") to extract the raw text from the manifesto PDF files, then knocked together a [Python script](https://github.com/markashleybell/manifesto-miner "External Link: Manifesto Miner") and a list of stop words to clean up and process the text data. The word clouds themselves are rendered using Tim Chien's [wordcloud2.js](https://github.com/timdream/wordcloud2.js "External Link: WordCloud.js").
 
 ## Labour
 

@@ -61,7 +61,7 @@ I'm sure you'll also have seen code like this:
 
 What do all of those parameter values represent?
 
-There is [an argument for not using boolean flags as method parameters at all](https://medium.com/@amlcurran/clean-code-the-curse-of-a-boolean-parameter-c237a830b7a3), but in the real world we're often using APIs we didn't write, or consuming legacy code which can't easily be rewritten.
+There is [an argument for not using boolean flags as method parameters at all](https://medium.com/@amlcurran/clean-code-the-curse-of-a-boolean-parameter-c237a830b7a3 "External Link: Clean code: The curse of a boolean parameter"), but in the real world we're often using APIs we didn't write, or consuming legacy code which can't easily be rewritten.
 
 By using named method arguments, we can make things much clearer:
 
