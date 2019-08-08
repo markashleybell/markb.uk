@@ -47,10 +47,9 @@ li {
 }
 
 img {
-    max-width: 100%;
+    width: 100%;
+    // max-width: 100%;
     display: inline-block;
-    border: solid 1px #e0e0e0;
-    border-radius: 3px;
 }
 
 ul {
@@ -67,6 +66,11 @@ code {
 
 figure {
     text-align: center;
+
+    background-color: #e0e0e0;
+    border: solid 1px #999999;
+    border-radius: 3px;
+    padding: $vertical-whitespace;
 }
 
 .container {
