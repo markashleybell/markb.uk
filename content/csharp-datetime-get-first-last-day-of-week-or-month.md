@@ -5,7 +5,7 @@ Updated: 2019-02-02 06:50
 
 I recently found myself needing to get the date of the first day of a particular week in C#. After browsing [this rather confusing collection of answers](http://stackoverflow.com/questions/38039/how-can-i-get-the-datetime-for-the-start-of-the-week "External Link: Stack Overflow"), I pieced together parts of various code snippets into this little collection of utility methods.
 
-    :::csharp
+    :::csharp{Thread}
     public static partial class DateTimeExtensions 
     {
         public static DateTime FirstDayOfWeek(this DateTime dt)

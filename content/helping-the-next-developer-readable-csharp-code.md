@@ -24,7 +24,7 @@ See what I did there? You can indent fluent interface calls (e.g. LINQ extension
 
 Another common culprit when it comes to lengthy lines is the ternary expression. I find it helpful to break long expressions onto multiple lines:
 
-    :::csharp
+    :::csharp{DynamicConfiguration}
     var intVar = myVal == 1
         ? Convert.ToInt32(longVariableName.GetValue())
         : new DynamicConfiguration(myVal).GetValue();
@@ -35,12 +35,12 @@ In the case above, it might even be clearer to rewrite using `if`/`else`.
 
 Use of the `var` keyword reduces noise. There's no need for this:
 
-    :::csharp
+    :::csharp{RatherLengthyClassName}
     RatherLengthyClassName myObject = new RatherLengthyClassName();
 
 When you can do this, with no loss of clarity:
 
-    :::csharp
+    :::csharp{RatherLengthyClassName}
     var myObject = new RatherLengthyClassName();
 
 The exception to this rule is when it isn't clear what the type will be from the assignment:
@@ -54,7 +54,7 @@ This contrived example contains a deliberately terrible method name, but I'm sur
 
 I'm sure you'll also have seen code like this:
 
-    :::csharp
+    :::csharp{ComplicatedThing}
     var myObject1 = new ComplicatedThing(true, 3, true, false, true);
 
     myObject2.PerformAction(Action.Update, 12, "Joe Bloggs", true);
