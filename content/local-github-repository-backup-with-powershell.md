@@ -37,7 +37,7 @@ The script itself is pretty straightforward, as all we're doing is fetching a li
 
     # Create the authorisation headers using our access token
     $bytes = [System.Text.Encoding]::UTF8.GetBytes("${Username}:${GitHubAccessToken}")
-    $base64Credentials =[Convert]::ToBase64String($Bytes)
+    $base64Credentials = [Convert]::ToBase64String($Bytes)
 
     $authorization = "Basic $base64Credentials"
 
