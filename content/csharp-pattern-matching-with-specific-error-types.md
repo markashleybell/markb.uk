@@ -1,5 +1,5 @@
-Title: Handling errors with specific error types using C# pattern matching
-Abstract: Improve your application's error handling.
+Title: Handling errors with specific error types and C# pattern matching
+Abstract: Improve your application's error handling by creating specific types for error cases.
 Published: 2020-06-22 07:57
 Updated: 2020-06-22 07:57
 
