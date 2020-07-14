@@ -96,7 +96,7 @@ Now we've modelled our errors, we can use them in our code. This validation func
         Guard clauses are a sensible use of exceptions.
         
         Our logic assumes that all arguments are non-null references, so if 
-        they *are* null, it's either programmmer error, or something is wrong 
+        they *are* null, it's either programmer error, or something is wrong 
         in the consuming code. Either way, we want to fail immediately.
         */
         
