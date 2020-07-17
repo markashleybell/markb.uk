@@ -1,4 +1,5 @@
 node_modules/
-config.cfg
-config.cfg.*
-!config.cfg.example
+**/*.css
+**/*.css.map
+**/*.js
+**/*.js.map

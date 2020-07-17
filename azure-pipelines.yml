@@ -1,0 +1,74 @@
+# Build
+
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-latest'
+
+steps:
+
+- task: DownloadGitHubRelease@0
+  displayName: 'Download F-Words Executable'
+  inputs:
+    connection: 'github-releases'
+    userRepository: 'markashleybell/f-words'
+    defaultVersionType: 'latest'
+    downloadPath: '$(Agent.ToolsDirectory)\fw'
+
+- task: ExtractFiles@1
+  displayName: 'Extract F-Words'
+  inputs:
+    archiveFilePatterns: '$(Agent.ToolsDirectory)\fw\*.zip'
+    destinationFolder: '$(Agent.ToolsDirectory)\fw'
+    cleanDestinationFolder: false
+
+- task: PowerShell@2
+  displayName: 'Substitute F-Words Config Variables'
+  inputs:
+    filePath: '$(Build.SourcesDirectory)\config.ps1'
+    failOnStderr: true
+    workingDirectory: '$(Build.SourcesDirectory)'
+
+- task: PowerShell@2
+  displayName: 'Build Site'
+  inputs:
+    targetType: 'inline'
+    script: '$(Agent.ToolsDirectory)\fw\fwords.exe .'
+    failOnStderr: true
+    workingDirectory: '$(Build.SourcesDirectory)'
+
+- task: FileTransform@2
+  displayName: 'Transform Config Files'
+  inputs:
+    folderPath: '$(Build.SourcesDirectory)'
+
+- task: PowerShell@2
+  displayName: 'Replace 404 Path In Web.config'
+  inputs:
+    targetType: 'inline'
+    script: |
+      $config = Get-Content -Path "$(Build.SourcesDirectory)\public\web.config"
+      $content = $config -ireplace "path=""NotFoundErrorHtmlPath""", "path=""$(NotFoundErrorHtmlPath)"""
+      $content | Set-Content -Path "$(Build.SourcesDirectory)\public\web.config"
+    failOnStderr: true
+
+- task: Npm@1
+  displayName: 'NPM Package Restore'
+  inputs:
+    command: 'ci'
+    workingDir: '$(Build.SourcesDirectory)'
+
+- task: Npm@1
+  displayName: 'NPM Build'
+  inputs:
+    command: 'custom'
+    workingDir: '$(Build.SourcesDirectory)'
+    customCommand: 'run build'
+
+- task: PublishBuildArtifacts@1
+  displayName: Push Artifact
+  inputs:
+    pathtoPublish: '$(Build.SourcesDirectory)\public'
+    artifactName: 'markb-uk-publish-output'
+    publishLocation: 'Container'
