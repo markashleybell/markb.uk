@@ -11,7 +11,7 @@ steps:
 - task: DownloadGitHubRelease@0
   displayName: 'Download F-Words Executable'
   inputs:
-    connection: 'github-releases'
+    connection: 'github-releases-markb-uk'
     userRepository: 'markashleybell/f-words'
     defaultVersionType: 'latest'
     downloadPath: '$(Agent.ToolsDirectory)\fw'
