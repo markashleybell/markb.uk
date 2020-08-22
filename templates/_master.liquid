@@ -44,7 +44,9 @@
         <link rel="dns-prefetch" href="https://www.googletagmanager.com">
         <link href="https://www.google-analytics.com" rel="preconnect" crossorigin>
         <link href="https://www.googletagmanager.com" rel="preconnect" crossorigin>
+        <link rel="preload" href="{{ cdn1 }}/fonts/PublicSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="{{ cdn1 }}/fonts/PublicSans-Bold.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="{{ cdn1 }}/fonts/PublicSans-Italic.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="stylesheet" type="text/css" media="screen" href="{{ cdn1 }}/css/bundle.css" />
         {% if analytics_id != null and analytics_id != "" %}
         <script async src="https://www.googletagmanager.com/gtag/js?id={{ analytics_id }}"></script>
