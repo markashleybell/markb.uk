@@ -10,9 +10,11 @@
 {% endblock %}
 {% block recent_articles %}
 <h2>More articles</h2>
-<ul class="post-list" role="navigation">
-    {% for article in article_list %}
-    <li><a href="{{ article.relative_url }}">{{ article.title }}</a></li>
-    {% endfor %}
-</ul>
+<nav>
+    <ul class="post-list">
+        {% for article in article_list %}
+        <li><a href="{{ article.relative_url }}">{{ article.title }}</a></li>
+        {% endfor %}
+    </ul>
+</nav>
 {% endblock %}
