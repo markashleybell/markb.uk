@@ -16,12 +16,11 @@ I have this saved as `Copy-Files-Modified-Between-Dates.ps1`:
         [Parameter(Mandatory=$true)][string]$ModifiedBefore
     )
 
-    Get-ChildItem -Path $SourceDirectory | 
-    Sort-Object -Property LastWriteTime -Descending | 
-    Where-Object { 
+    Get-ChildItem -Path $SourceDirectory |
+    Where-Object {
         $_.LastWriteTime `
             -gt (Get-Date $ModifiedAfter) `
-            -and $_.LastWriteTime -lt (Get-Date $ModifiedBefore) } | 
+            -and $_.LastWriteTime -lt (Get-Date $ModifiedBefore) } |
     ForEach-Object { $_ | Copy-Item -Destination $DestinationDirectory }
 
 Note that this cmdlet supports the standard PS `-WhatIf` parameter, so you can check the correct files are going to be copied _before_ actually performing the copy.
