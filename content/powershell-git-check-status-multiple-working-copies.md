@@ -17,15 +17,15 @@ So I decided to try and reproduce the behaviour of `gitinsync`, using only Git i
 
 In summary: we loop over all child folders containing a `.git` folder, then run `git status --porcelain` in each, transform the results and display a nice, easy-to-scan table.
 
-    :::powershell
+    :::powershell{Char|Array|PSCustomObject}
     # Escape and colour codes for use in virtual terminal escape sequences
     $esc = [char]27
     $red = '31'
     $green = '32'
 
     # Get child folders of the current folder which contain a '.git' folder
-    Get-ChildItem -Path . -Attributes Directory+Hidden -Recurse -Filter '.git' 
-    | ForEach-Object { 
+    Get-ChildItem -Path . -Attributes Directory+Hidden -Recurse -Filter '.git' | 
+    ForEach-Object { 
         # Assume the parent folder of this .git folder is the working copy
         $workingCopy = $_.Parent
         $repositoryName = $workingCopy.Name
@@ -42,8 +42,8 @@ In summary: we loop over all child folders containing a `.git` folder, then run 
             -CurrentOperation $repositoryName
 
         # Get a list of untracked/uncommitted changes
-        [Array]$gitStatus = $(git status --porcelain) 
-            | ForEach-Object { $_.Trim() }
+        [Array]$gitStatus = $(git status --porcelain) | 
+            ForEach-Object { $_.Trim() }
 
         # Status includes VT escape sequences for coloured text
         $status = ($gitStatus) `
@@ -65,8 +65,8 @@ In summary: we loop over all child folders containing a `.git` folder, then run 
             'Working Copy' = $repositoryName
             Details = $details
         }
-    } 
-    | Format-Table -Wrap -AutoSize
+    } |
+    Format-Table -Wrap -AutoSize
 
 There are a couple of things going on here which warrant a little more explanation.
 
