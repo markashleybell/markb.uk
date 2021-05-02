@@ -38,7 +38,7 @@ So the first part of the puzzle—not being able to reset the stream position—
 
     Request.Body.Position = 0;
 
-    var rawRequestBody = await new StreamReader(Request.Body).ReadToEnd();
+    var rawRequestBody = new StreamReader(Request.Body).ReadToEnd();
 
 `Request.EnableBuffering()` just calls the internal [`BufferingHelper.EnableRewind()`](https://source.dot.net/#Microsoft.AspNetCore.Http/Internal/BufferingHelper.cs,14) method, which replaces the request body with a seekable stream and correctly registers it for disposal/cleanup by the framework.
 
