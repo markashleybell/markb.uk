@@ -1,6 +1,6 @@
 {
     "files": [
-        "js/*.ts"
+        "./js/main.ts"
     ],
     "compilerOptions": {
         "target": "es5",
