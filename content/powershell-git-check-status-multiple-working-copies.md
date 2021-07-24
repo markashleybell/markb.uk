@@ -74,7 +74,7 @@ There are a couple of things going on here which warrant a little more explanati
 
 If you haven't seen `git status --porcelain` before, it's just a way of getting consistent, machine-parsable output from the `git status` command. 
 
-Confusingly, in the context of `git status`, the `--porcelain` switch actually means... [_not_ porcelain](https://stackoverflow.com/a/6978402/43140))—but I'm sure we're all used to the “quirks” of the Git CLI by now.
+Confusingly, in the context of the `git status` command, the `--porcelain` switch actually means... [_not_ porcelain](https://stackoverflow.com/a/6978402/43140)—but I'm sure we're all used to the “quirks” of the Git CLI by now.
 
 ## Virtual Terminal escape sequences
 
