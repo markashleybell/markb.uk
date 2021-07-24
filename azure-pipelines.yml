@@ -26,7 +26,7 @@ steps:
 - task: PowerShell@2
   displayName: 'Substitute F-Words Config Variables'
   inputs:
-    filePath: '$(Build.SourcesDirectory)\config.ps1'
+    filePath: '$(Build.SourcesDirectory)\update-config.ps1'
     failOnStderr: true
     workingDirectory: '$(Build.SourcesDirectory)'
 
