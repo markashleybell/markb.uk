@@ -53,7 +53,7 @@ So, you need to call the _asynchronous_ read method of `StreamReader` and `await
 
     var rawRequestBody = await new StreamReader(request.Body).ReadToEndAsync();
 
-Now everything works, giving us a string containing all the body content. 
+Now everything works, giving us a string containing all the body content.
 
 I've wrapped this up into a helper extension, with one extra tweak: resetting the `Body` stream position back to 0 after the read (it's only polite):
 
@@ -117,7 +117,7 @@ Calling `request.EnableBuffering()` (either directly or via my extension method)
 
 In this case, the MVC model binder will fully consume the body stream, so reading it after that just returns an empty string.
 
-What we need to do here is call `EnableBuffering()` _before_ the request reaches the MVC pipeline, so that the body stream is still available after the model binder has read from it. 
+What we need to do here is call `EnableBuffering()` _before_ the request reaches the MVC pipeline, so that the body stream is still available after the model binder has read from it.
 
 We can do this in a number of ways, all of which involve middleware. All of these solutions are called from within the `Configure` method of the `Startup` class—[you can see them in context here](https://github.com/markashleybell/ReadRawRequestBodyExample/blob/main/Startup.cs).
 
@@ -153,7 +153,7 @@ It's arguably cleaner to encapsulate the behaviour in a custom middleware class,
 
 Then within `Configure`:
 
-    :::csharp
+    :::csharp{EnableRequestBodyBufferingMiddleware}
     app.UseMiddleware<EnableRequestBodyBufferingMiddleware>();
 
 ### Conditional Middleware Application
