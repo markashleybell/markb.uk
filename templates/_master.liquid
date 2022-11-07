@@ -37,7 +37,6 @@
         <meta name="og:type" content="website">
         {% endif %}
         <!-- END META DATA -->
-        <link rel="me" type="text/html" href="https://mastodon.social/@markeebee" />
         <link rel="preload" href="/css/bundle.css" as="style" />
         <link rel="preload" href="/js/bundle.js" as="script" />
         <link rel="canonical" href="{{ site_url }}/{{ og_url }}" />
@@ -53,7 +52,7 @@
             {% block content %}{% endblock %}
             {% block recent_articles %}{% endblock %}
             {% block footer %}
-            <p class="credit">&copy; <a href="https://twitter.com/markashleybell" title="External Link: Twitter Profile">Mark Ashley Bell</a> 2018</p>
+            <p class="credit">&copy; <a rel="me" href="https://mastodon.social/@markeebee" title="External Link: Mastodon Profile">Mark Ashley Bell</a> 2022</p>
             {% endblock %}
         </div>
         <script async src="/js/bundle.js"></script>
