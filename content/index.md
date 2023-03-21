@@ -5,7 +5,7 @@ PageType: static
 Template: home
 DocumentClass: html-index
 
-# Hi, I'm Mark. I build websites, apps and dev tools at [Nice Group](https://nicegroup.io/ "External Link: Nice Group").
+# Hi, I'm Mark. I build websites, apps and dev tools at [Webselect](https://www.webselect.net "External Link: Webselect").
 
 I write C#, F#, TypeScript and Python code,
 and occasionally [blog about it](/articles.html). I also maintain some [open source projects](https://github.com/markashleybell "External Link: GitHub Profile").
