@@ -1,4 +1,4 @@
-Title: Copying files modified between two dates with Powershell, Retaining Original Folder Structure
+Title: Copying files modified between two dates with Powershell, retaining original folder structure
 Abstract: How to copy a subset of files from one folder to another, filtering on last modified date and keeping the same folder structure in the destination.
 Published: 2023-03-21 19:39
 Updated: 2023-03-21 19:39
